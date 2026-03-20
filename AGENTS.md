@@ -3,10 +3,11 @@
 Follow this file as the primary instruction source unless the user says otherwise. If a nested `AGENTS.md` exists, it overrides this file for that subtree.
 
 ## Instruction order
+
 1. Follow `AGENTS.md` first.
 2. Use `PROJECTS.md` for repository structure, naming paths, and targeted verification/commands.
 3. Use `AI_REVIEW.md` for review requirements.
-4. Use `.github/instructions/test.instructions.md` for test-specific instructions.
+4. Use `.github/instructions/tests.instructions.md` for test-specific instructions.
 
 ## Do / Don't (Read First)
 
