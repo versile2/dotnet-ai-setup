@@ -1,0 +1,45 @@
+﻿name: Build
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Secret scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build:
+    needs: secrets
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore
+        run: dotnet restore {{SOLUTION_NAME}}
+
+      - name: Build
+        run: dotnet build {{SOLUTION_NAME}} --no-restore --configuration Release --nologo
+
+      - name: Format Check
+        run: dotnet format {{SOLUTION_NAME}} --verify-no-changes
+
+      - name: Test
+        run: dotnet test {{SOLUTION_NAME}} --no-build --configuration Release --nologo
