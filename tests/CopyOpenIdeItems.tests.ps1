@@ -37,7 +37,6 @@ try {
         '.github\copilot-instructions.md',
         '.github\instructions\tests.instructions.md',
         '.github\pull_request_template.md',
-        '.github\workflows\build.yml',
         'src\.editorconfig',
         'src\Directory.Build.props'
     )
@@ -47,6 +46,11 @@ try {
         if (-not (Test-Path $copiedPath)) {
             throw "Expected copied file missing: $relativePath"
         }
+    }
+
+    $removedWorkflowPath = Join-Path $targetRoot '.github\workflows\build.yml'
+    if (Test-Path $removedWorkflowPath) {
+        throw 'Unexpected copied file present: .github\workflows\build.yml'
     }
 
     $backupFiles = Get-ChildItem -Path $targetRoot -Filter 'PROJECTS.md.old*' -File

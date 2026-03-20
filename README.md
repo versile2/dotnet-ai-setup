@@ -12,7 +12,6 @@ This repo contains a small setup bundle for another .NET repo. The batch file co
 - `.github\copilot-instructions.md`
 - `.github\instructions\tests.instructions.md`
 - `.github\pull_request_template.md`
-- `.github\workflows\build.yml`
 - `src\.editorconfig`
 - `src\Directory.Build.props`
 
@@ -28,4 +27,3 @@ C:\path\to\dotnet-ai-setup\copy-open-ide-items.bat .
 
 4. Edit `PROJECTS.md` and replace the placeholders with your real project paths and targets.
 5. If your repo does not use `src` as its root, move `src\.editorconfig` and `src\Directory.Build.props` to the matching location in your repo.
-6. Edit `.github\workflows\build.yml` and replace the solution placeholder with your actual solution name.

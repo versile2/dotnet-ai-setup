@@ -24,7 +24,6 @@ for %%F in (
     ".github\copilot-instructions.md"
     ".github\instructions\tests.instructions.md"
     ".github\pull_request_template.md"
-    ".github\workflows\build.yml"
     "src\.editorconfig"
     "src\Directory.Build.props"
 ) do (
