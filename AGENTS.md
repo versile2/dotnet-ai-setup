@@ -1,4 +1,4 @@
-﻿# AGENTS.md - AI agent guide
+# AGENTS.md - AI agent guide
 
 Follow this file as the primary instruction source unless the user says otherwise. If a nested `AGENTS.md` exists, it overrides this file for that subtree.
 
@@ -36,7 +36,7 @@ Follow this file as the primary instruction source unless the user says otherwis
 ## Working rules
 
 * keep changes focused on the user request, do not make unrelated changes
-* Prefer minimal changes that fit the existing repository structure
+* prefer minimal changes that fit the existing repository structure
 * do not edit or suggest changes to protected projects unless explicitly instructed to do so
 
 ## Completion rules
@@ -55,3 +55,4 @@ Follow this file as the primary instruction source unless the user says otherwis
 
 * If you are unsure about any aspect of the request, ask for clarification.
 * If a policy needs hard enforcement and an existing analyzer does not cover it, call that out. A custom analyzer may be required.
+* Pause between major stages of multi-step work unless the user asks for end-to-end execution.
