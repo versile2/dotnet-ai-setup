@@ -39,6 +39,12 @@ Follow this file as the primary instruction source unless the user says otherwis
 * prefer minimal changes that fit the existing repository structure
 * do not edit or suggest changes to protected projects unless explicitly instructed to do so
 
+## Repository boundary
+
+* This repository is for .NET AI setup, bootstrap, and Open IDE configuration material only.
+* Do not create or copy another application, UI Sketch, or project planning to this repository.
+* If a task references `dotnet-ai-setup` while also discussing application, UI, or planning work, confirm the intended target repository before creating files.
+
 ## Completion rules
 
 * Code must satisfy the review requirements in `AI_REVIEW.md` in addition to `AGENTS.md` before submission
