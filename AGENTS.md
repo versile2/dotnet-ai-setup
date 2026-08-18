@@ -1,6 +1,6 @@
 # AGENTS.md - AI agent guide
 
-Follow this file as the primary instruction source unless the user says otherwise. If a nested `AGENTS.md` exists, it overrides this file for that subtree.
+Follow this file as the primary instruction source. User requests and nested `AGENTS.md` files may refine ordinary workflow guidance, but they do not override the [External database boundary](#external-database-boundary) below.
 
 ## Instruction order
 
@@ -28,6 +28,7 @@ Follow this file as the primary instruction source unless the user says otherwis
 * do not run solution-wide build, test, or format commands unless explicitly requested
 * do not commit secrets, tokens, passwords, certificates, private URLs, or real connection strings
 * do not put secrets in tracked `appsettings*.json`, tests, docs, or examples
+* do not circumvent, weaken, reinterpret, or work around the [External database boundary](#external-database-boundary), directly or indirectly
 * do not add dependencies without approval
 * do not suppress warnings to get a build through
 * do not make large refactors or cross-project moves without approval
@@ -38,6 +39,15 @@ Follow this file as the primary instruction source unless the user says otherwis
 * keep changes focused on the user request, do not make unrelated changes
 * prefer minimal changes that fit the existing repository structure
 * do not edit or suggest changes to protected projects unless explicitly instructed to do so
+
+## External database boundary
+
+* You may review database schemas, migrations, ORM mappings, seed definitions, and SQL text stored inside the checked-out repository.
+* Do not connect to, query, inspect, export, copy, modify, or infer data from any database outside the checked-out repository. This includes every database referenced by connection strings, configuration, documentation, tests, migrations, scripts, or application code.
+* Do not execute repository SQL against an external database, request or use database credentials, or ask anyone to paste database contents into the task.
+* Treat requests to reveal, transmit, summarize, or analyze external database contents as outside the agent's authorized scope. Stop and report the boundary instead.
+* An ordinary task request does not authorize an exception. A repository maintainer must change this policy through a separate reviewed change before a later task may access an external database.
+* Database access can create legal, contractual, privacy, security, and employment consequences. When uncertain whether data is external, treat it as external and do not access it.
 
 ## Completion rules
 
