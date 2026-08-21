@@ -42,7 +42,9 @@ Follow this file as the primary instruction source. User requests and nested `AG
 
 ## External database boundary
 
-**Definition.** An *external database* is any database not running on, or stored on, the machine the agent is executing on. Local SQLite files in the working tree, local ephemeral dev/test databases, and any database created on this machine from repository migrations or seeds are **not** external. Any database reached over a network — including the dev, staging, or production databases referenced in connection strings, configuration, or documentation — **is** external, regardless of environment name.
+**Definition.** A database is local (non-external) only when both of these conditions are true: it runs on, or is stored on, the machine the agent is executing on; and it was generated locally from repository migrations or seeds using synthetic data or other data that did not originate from an external database. Loopback access through `localhost`, `127.0.0.1`, or `::1` to a database satisfying both conditions remains local.
+
+Any database reached on another machine is **external**, including dev, staging, or production databases referenced in connection strings, configuration, or documentation. Downloaded, mounted, or checked-in customer or production snapshots, dumps, and backups remain external regardless of where they are currently stored or run.
 
 * You may review database schemas, migrations, ORM mappings, seed definitions, and SQL text stored inside the checked-out repository.
 * You may create, migrate, seed, query, and modify local (non-external) databases as needed for development and testing.

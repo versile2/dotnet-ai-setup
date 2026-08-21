@@ -1,6 +1,6 @@
 ﻿# Copilot Instructions
 
-Follow `AGENTS.md` first. If guidance conflicts, this file wins.
+This file supplements `AGENTS.md`. It cannot override the External database boundary in `AGENTS.md`; if any guidance conflicts with that boundary, follow `AGENTS.md`.
 
 ## Instruction order
 1. Follow `AGENTS.md` first.
