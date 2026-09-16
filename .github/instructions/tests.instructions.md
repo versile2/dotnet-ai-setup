@@ -55,10 +55,7 @@ Defaults below are for common .NET test stacks. If a repository uses a different
 - Keep at least one targeted assertion tied to the historical bug symptom.
 - Preserve nearby existing behavior checks to reduce regression risk.
 - Avoid broad refactors; prefer minimal, behavior-preserving test additions and fixes.
-- If a bug is being tested, request JIRA information in the `JIRA` field below to link the test to the issue.
-JIRA: []
-
-<!-- Example: JIRA: [ABC-123] -->
+- When the consuming project uses an issue tracker, record its identifier in that project’s convention; otherwise retain a targeted assertion tied to the historical symptom.
 
 ## Verification
 
