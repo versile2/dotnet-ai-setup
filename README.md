@@ -47,6 +47,9 @@ You can ask AI to inspect your solution and draft `PROJECTS.md`. Review the resu
 | `Directory.Build.props` | Shared .NET build settings for projects within its scope. |
 | `.gitignore` and `.gitattributes` | Source-control defaults for .NET development. |
 
+### Choosing an assertion library
+AwesomeAssertions is the default. A project choosing Shouldly must update the default in `.github/instructions/tests.instructions.md` and `AI_REVIEW.md`, add the selected library via its normal dependency workflow, and keep one consistent default per test project.
+
 The testing guidance favors **xUnit**, **bUnit for Blazor component tests**, and **AwesomeAssertions**. Adapt it to the frameworks your project actually uses; MVC tests do not require bUnit.
 
 ## Make `PROJECTS.md` yours
