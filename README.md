@@ -26,8 +26,9 @@ The defaults reflect the technologies and practices used by the author. They are
 2. **Create or add your application and test projects.** Use the solution structure that fits your application.
 3. **Configure `PROJECTS.md`** with your actual project paths, responsibilities, protected areas, and verification commands.
 4. **Review the defaults** in `AGENTS.md`, the test instructions, `.editorconfig`, and `Directory.Build.props`. Adapt them to your project before relying on them. Check file-header ownership and licensing as well.
-5. **Check configuration placement.** The supplied build and editor configuration lives under `src/`; place it where it will apply to your intended projects and preserve any existing configuration.
-6. **Run your documented build and test commands**, then commit the configured starting point.
+5. **Check configuration placement.** The supplied build and editor configuration lives at repository root and applies to source and test projects beneath it and preserve any existing configuration.
+6. **Keep nullable and warnings-as-errors enabled for new projects; document intentional exceptions in `PROJECTS.md`.**
+7. **Run your documented build and test commands**, then commit the configured starting point.
 
 You can ask AI to inspect your solution and draft `PROJECTS.md`. Review the result—especially project responsibilities, protected paths, and commands—before using it as the project map.
 
@@ -43,7 +44,7 @@ You can ask AI to inspect your solution and draft `PROJECTS.md`. Review the resu
 | `.github/instructions/tests.instructions.md` | Testing conventions and regression-test guidance. |
 | `.github/pull_request_template.md` | A consistent structure for describing and checking changes. |
 | `src/.editorconfig` | Formatting and code-style preferences. |
-| `src/Directory.Build.props` | Shared .NET build settings for projects within its scope. |
+| `Directory.Build.props` | Shared .NET build settings for projects within its scope. |
 | `.gitignore` and `.gitattributes` | Source-control defaults for .NET development. |
 
 The testing guidance favors **xUnit**, **bUnit for Blazor component tests**, and **AwesomeAssertions**. Adapt it to the frameworks your project actually uses; MVC tests do not require bUnit.
